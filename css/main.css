@@ -1,0 +1,151 @@
+:root {
+    --clr-navy: #34495e;
+    --primary-clr: #6563ff;
+    --secondary-clr: #c4c3fc;
+    --light-line: #e4e2ed;
+    --cell-width: 22px;
+    --light-text: #686673;
+    --light-dot: #adaac0;
+    --wall-clr: #0c3547;
+    --path-clr: #fffe6a;
+    --visited-clr: #40cee3;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+.template{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-gap: 10px;
+}
+
+
+nav{
+    padding: 4px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--clr-navy);
+}
+
+.logo{
+    padding: 0 16px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.btn{
+    background-color: var(--primary-clr);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+}
+.nav-menu>li.active>a{
+    background-color: var(--primary-clr);
+}
+.nav-menu>li.active>a:hover{
+    color: white;
+}
+.nav-menu>li>a:hover{
+    color: var(--secondary-clr);
+}
+.nav-menu>li>a{
+    color: white;
+    padding: 8px 16px;
+    display: block;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.drop-box{
+    position: relative;
+}
+.drop-box.active .drop-menu{
+    display: block;
+}
+.drop-box .drop-menu{
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    top: calc(100% + 20px);
+    background-color: var(--clr-navy);
+    min-width: 120px;
+    padding: 4px;
+    border-radius: 8px;
+    display: none;
+}
+
+.drop-menu>li>a:hover,
+.drop-menu>li.active>a{
+    background-color: var(--primary-clr);
+}
+.drop-menu>li>a{
+    color: white;
+    padding: 8px;
+    display: block;
+    border-radius: 4px;
+}
+
+.guide-bar{
+    text-transform: capitalize;
+    font-size: 14px;
+    display: flex;
+    gap: 16px;
+    padding: 8px;
+}
+.guide-bar>li{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+#board{
+    overflow: hidden;
+}
+
+.row{
+    display: flex;
+}
+.col{
+    aspect-ratio: 1;
+    width: 100%;
+    min-width: var(--cell-width);
+    border: 1px solid var(--light-line);
+}
+
+@media screen and (max-width: 1000px){
+    nav{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 4px;
+    }
+    .btn{
+        justify-self: start;
+    }
+    .nav-menu{
+        grid-column: 1/-1;
+        width: max-content;
+    }
+}

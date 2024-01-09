@@ -1,0 +1,98 @@
+.caret {
+    display: block;
+    aspect-ratio: 1;
+    width: 14px;
+    background: url(../assets/icon/caret-down.svg);
+}
+
+.icon {
+    aspect-ratio: 1;
+    width: 20px;
+}
+
+.wall {
+    border-color: var(--clr-navy);
+    animation: wallAnimation .5s ease-out forwards;
+}
+
+.path {
+    animation: pathAnimation 1.5s ease-out forwards;
+}
+
+.visited {
+    animation: visitedAnimation 1.5s ease-out forwards;
+}
+
+.unvisited {
+    border: 1px solid var(--light-line);
+}
+
+.source {
+    background: url(../assets/icon/source.svg);
+}
+
+.target {
+    background: url(../assets/icon/target.svg);
+}
+
+
+
+/* animation */
+@keyframes wallAnimation {
+
+    0% {
+        transform: scale(.3);
+        background-color: var(--wall-clr);
+    }
+
+    50% {
+        transform: scale(1.1);
+        background-color: var(--wall-clr);
+    }
+
+    100% {
+        transform: scale(1.0);
+        background-color: var(--wall-clr);
+    }
+}
+
+@keyframes pathAnimation {
+    0% {
+        transform: scale(.6);
+        background-color: var(--path-clr);
+    }
+
+    50% {
+        transform: scale(1);
+        background-color: var(--path-clr);
+    }
+
+    100% {
+        transform: scale(1.0);
+        background-color: var(--path-clr);
+    }
+}
+
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(.3);
+        background-color: rgba(0, 0, 66, 0.75);
+        border-radius: 100%;
+    }
+
+    50% {
+        background-color: rgba(17, 104, 217, 0.75);
+    }
+
+    75% {
+        transform: scale(1);
+        background-color: rgba(0, 217, 159, 0.75);
+    }
+
+    100% {
+        transform: scale(1);
+        background-color: var(--visited-clr);
+    }
+}
+
+
