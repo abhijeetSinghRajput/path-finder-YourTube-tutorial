@@ -148,7 +148,7 @@ function boardInteraction(cells) {
         }
 
         const pointermove = (e) => {
-            if (isDrawing) {
+            if (isDrawing && !e.target.classList.contains('source') && !e.target.classList.contains('target')) {
                 e.target.classList.add('wall');
             }
             else if (DragPoint && isDragging) {
